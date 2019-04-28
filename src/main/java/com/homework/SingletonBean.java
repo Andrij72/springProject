@@ -15,11 +15,9 @@ public class SingletonBean {
 
     private void destroySingleton() {
         log.info("Singleton destroy...");
-        System.out.println("Singleton destroy...");
     }
 
     private void initSingleton() {
         log.info("Singleton init...");
-        System.out.println("Singleton init...");
     }
 }

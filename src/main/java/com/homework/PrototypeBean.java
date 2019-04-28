@@ -15,12 +15,10 @@ public class PrototypeBean {
     }
 
     public void initObjectPrototype(){
-        System.out.println("Prototype init..");
         log.info("Prototype object initialisation..");
     }
 
     public void destroyObjectPrototype(){
-        System.out.println("Prototype destroy..");
         log.info("Destroy prototype object.");
     }
 }
