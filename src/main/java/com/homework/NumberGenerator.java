@@ -9,4 +9,3 @@ public class NumberGenerator {
         return unigueNumber.incrementAndGet();
     }
 }
-

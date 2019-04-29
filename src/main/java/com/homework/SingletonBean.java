@@ -6,6 +6,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class SingletonBean implements InitializingBean, DisposableBean {
     private static final Logger LOGGER = Logger.getLogger(SingletonBean.class.getName());
+
     private int id;
     public SingletonBean() {
         id = NumberGenerator.getUnigueNumber();

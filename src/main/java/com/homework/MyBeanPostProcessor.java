@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 public class MyBeanPostProcessor implements BeanPostProcessor {
     public static final Logger LOGGER = Logger.getLogger(MyBeanPostProcessor.class.getName());
+
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         return bean;
