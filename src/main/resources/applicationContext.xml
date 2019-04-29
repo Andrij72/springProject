@@ -14,7 +14,7 @@
           init-method="initObjectPrototype"
           destroy-method="destroyObjectPrototype">
     </bean>
-    <bean id="singletonBean" class="com.homework.SingletonBean" scope="singleton"
+    <bean id="singletonBean" class="com.homework.SingletonBean"
           init-method="initSingleton"
           destroy-method="destroySingleton">
     </bean>

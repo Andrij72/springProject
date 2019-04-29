@@ -1,29 +1,29 @@
 package com.homework;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.FactoryBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringAppTest {
-    public static void main(String[] args) {
-        String configLocation;
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
-        );
+    private static final Logger LOGGER = Logger.getLogger(SpringAppTest.class.getName());
 
-        System.out.println( "------------Prototype Bean--------------------");
-        PrototypeBean prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
-        System.out.println( "id"+ prototypeBeanMesage.getId());
-         prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
-        System.out.println( "id"+ prototypeBeanMesage.getId());
-        prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
-        System.out.println( "id"+ prototypeBeanMesage.getId());
+    public static void main(String[] args) throws Exception {
+         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        LOGGER.info( "------------Prototype Bean--------------------");
+        FactoryBean prototypeBeanMesage = (FactoryBean) context.getBean("&prototypeBean");
+        LOGGER.info( prototypeBeanMesage.getObject());
+       prototypeBeanMesage = (FactoryBean) context.getBean("&prototypeBean");
+        LOGGER.info( prototypeBeanMesage.getObject());
+       prototypeBeanMesage = (FactoryBean) context.getBean("&prototypeBean");
+        LOGGER.info( prototypeBeanMesage.getObject());
 
-        System.out.println( "-------------Singleton Bean----------------");
+        LOGGER.info( "-------------Singleton Bean----------------");
         SingletonBean singletonBeanMesage = (SingletonBean) context.getBean("singletonBean");
-        System.out.println( "id"+ singletonBeanMesage.getId());
+        LOGGER.info( "id"+ singletonBeanMesage.getId());
         singletonBeanMesage = (SingletonBean) context.getBean("singletonBean");
-        System.out.println( "id"+ singletonBeanMesage.getId());
+        LOGGER.info( "id"+ singletonBeanMesage.getId());
         singletonBeanMesage = (SingletonBean) context.getBean("singletonBean");
-        System.out.println( "id"+ singletonBeanMesage.getId());
+        LOGGER.info( "id"+ singletonBeanMesage.getId());
 
         context.close();
     }
