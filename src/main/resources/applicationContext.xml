@@ -6,21 +6,16 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd"
-
        default-init-method="initObject"
        default-destroy-method="destroyObject"
+       default-lazy-init="true"
 >
-
     <bean id="prototypeBean" class="com.homework.PrototypeBean" scope="prototype"
           init-method="initObjectPrototype"
-          destroy-method="destroyObjectPrototype"
-    >
+          destroy-method="destroyObjectPrototype">
     </bean>
-
     <bean id="singletonBean" class="com.homework.SingletonBean" scope="singleton"
           init-method="initSingleton"
-          destroy-method="destroySingleton"
-    >
+          destroy-method="destroySingleton">
     </bean>
-
 </beans>

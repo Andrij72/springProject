@@ -12,7 +12,7 @@ public class SpringAppTest {
         System.out.println( "------------Prototype Bean--------------------");
         PrototypeBean prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
         System.out.println( "id"+ prototypeBeanMesage.getId());
-        prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
+         prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
         System.out.println( "id"+ prototypeBeanMesage.getId());
         prototypeBeanMesage = (PrototypeBean) context.getBean("prototypeBean");
         System.out.println( "id"+ prototypeBeanMesage.getId());
